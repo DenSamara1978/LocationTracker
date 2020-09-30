@@ -8,5 +8,6 @@ target 'LocationTracker' do
   # Pods for LocationTracker
 
   pod 'GoogleMaps'
+  pod 'RealmSwift'
 
 end
