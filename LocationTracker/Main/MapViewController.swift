@@ -10,7 +10,7 @@ import UIKit
 import GoogleMaps
 import RealmSwift
 
-class ViewController: UIViewController {
+class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var trackingActionButton: UIBarButtonItem!
@@ -146,11 +146,11 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: GMSMapViewDelegate {
+extension MapViewController: GMSMapViewDelegate {
     
 }
 
-extension ViewController: CLLocationManagerDelegate {
+extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error.localizedDescription)
     }
