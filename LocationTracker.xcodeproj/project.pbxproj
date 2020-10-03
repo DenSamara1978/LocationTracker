@@ -14,6 +14,7 @@
 		92504FCB251FCEC40049DAE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92504FC9251FCEC40049DAE0 /* Main.storyboard */; };
 		92504FCD251FCEC50049DAE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92504FCC251FCEC50049DAE0 /* Assets.xcassets */; };
 		92504FD0251FCEC50049DAE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92504FCE251FCEC50049DAE0 /* LaunchScreen.storyboard */; };
+		926A1CE02528D97100EF8CD9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926A1CDF2528D97100EF8CD9 /* User.swift */; };
 		926E688A252506CF005D2677 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926E6889252506CF005D2677 /* Coordinate.swift */; };
 		926E688E25250817005D2677 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926E688D25250817005D2677 /* Path.swift */; };
 /* End PBXBuildFile section */
@@ -27,6 +28,7 @@
 		92504FCC251FCEC50049DAE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92504FCF251FCEC50049DAE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92504FD1251FCEC50049DAE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		926A1CDF2528D97100EF8CD9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		926E6889252506CF005D2677 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		926E688D25250817005D2677 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		95D6EE4F0C01226034A15CF8 /* Pods-LocationTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.debug.xcconfig"; path = "Target Support Files/Pods-LocationTracker/Pods-LocationTracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			children = (
 				926E6889252506CF005D2677 /* Coordinate.swift */,
 				926E688D25250817005D2677 /* Path.swift */,
+				926A1CDF2528D97100EF8CD9 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 			files = (
 				92504FC8251FCEC40049DAE0 /* ViewController.swift in Sources */,
 				92504FC4251FCEC40049DAE0 /* AppDelegate.swift in Sources */,
+				926A1CE02528D97100EF8CD9 /* User.swift in Sources */,
 				92504FC6251FCEC40049DAE0 /* SceneDelegate.swift in Sources */,
 				926E688E25250817005D2677 /* Path.swift in Sources */,
 				926E688A252506CF005D2677 /* Coordinate.swift in Sources */,
