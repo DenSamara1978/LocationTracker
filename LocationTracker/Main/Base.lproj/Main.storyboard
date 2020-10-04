@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e2t-ai-QiK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,13 +12,13 @@
         <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="LocationTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="BYZ-38-t0r" customClass="MapViewController" customModule="LocationTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N9j-iJ-k7E" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -35,25 +37,77 @@
                                 <action selector="trackingAction:" destination="BYZ-38-t0r" id="Uyr-y7-Ka8"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Предыдущий" id="e90-NX-mag">
-                            <connections>
-                                <action selector="prevTracking:" destination="BYZ-38-t0r" id="ydb-6Y-NNe"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Выйти" id="1dt-YA-UoP">
+                                <connections>
+                                    <action selector="logout:" destination="BYZ-38-t0r" id="iSZ-PE-aRT"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Предыдущий" id="e90-NX-mag">
+                                <connections>
+                                    <action selector="prevTracking:" destination="BYZ-38-t0r" id="ydb-6Y-NNe"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="N9j-iJ-k7E" id="g8F-J1-IQL"/>
+                        <outlet property="router" destination="DyF-lg-J3o" id="4Md-eX-HZT"/>
                         <outlet property="trackingActionButton" destination="OnW-pL-615" id="fve-qI-hOT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="DyF-lg-J3o" customClass="MapRouter" customModule="LocationTracker" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="138.61607142857142"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="2pO-ag-qX4">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="3iI-9Y-bOM" customClass="MainViewController" customModule="LocationTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pUN-9Y-mUq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqw-U6-ave">
+                                <rect key="frame" x="123" y="194" width="168" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Показать карту"/>
+                                <connections>
+                                    <action selector="showMap:" destination="3iI-9Y-bOM" eventType="touchUpInside" id="4Ia-ZD-Gsb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sp3-GX-092">
+                                <rect key="frame" x="172.5" y="295" width="69" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Выйти"/>
+                                <connections>
+                                    <action selector="logout:" destination="3iI-9Y-bOM" eventType="touchUpInside" id="CBL-6B-Ntl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5BM-Rd-udY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dqw-U6-ave" firstAttribute="centerX" secondItem="5BM-Rd-udY" secondAttribute="centerX" id="34p-4z-Z5U"/>
+                            <constraint firstItem="dqw-U6-ave" firstAttribute="top" secondItem="5BM-Rd-udY" secondAttribute="top" constant="150" id="4rl-Np-vl9"/>
+                            <constraint firstItem="sp3-GX-092" firstAttribute="centerX" secondItem="5BM-Rd-udY" secondAttribute="centerX" id="A3l-4e-HX1"/>
+                            <constraint firstItem="sp3-GX-092" firstAttribute="top" secondItem="dqw-U6-ave" secondAttribute="bottom" constant="60" id="X3x-B6-e0a"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="router" destination="gGb-FV-SB5" id="K1Y-Zf-Dt3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nL3-gb-K0W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="gGb-FV-SB5" customClass="MainRouter" customModule="LocationTracker" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="-560"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dkx-7R-jw0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e2t-ai-QiK" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavMapController" automaticallyAdjustsScrollViewInsets="NO" id="e2t-ai-QiK" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qbj-d7-Ugi">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

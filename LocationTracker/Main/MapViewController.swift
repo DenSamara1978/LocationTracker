@@ -14,6 +14,7 @@ class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var trackingActionButton: UIBarButtonItem!
+    @IBOutlet weak var router: MapRouter!
     
     private var beginBackgroundTask: UIBackgroundTaskIdentifier?
     private var realmNotification: NotificationToken?
@@ -106,10 +107,16 @@ class MapViewController: UIViewController {
         }
     }
     
+    @IBAction func logout(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "isLogin")
+        router.toLaunch()
+    }
+    
     private func loadRealmPath() {
         do {
             let realm = try Realm()
-            path = realm.objects(Path.self).first ?? Path()
+            let pathes = realm.objects(Path.self)
+            let path = pathes.first ?? Path()
             routePath = GMSMutablePath()
             var coord = CLLocationCoordinate2D()
             path.points.forEach { coordinate in

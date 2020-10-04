@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		6DD601E7A1B66C11318FDB63 /* Pods_LocationTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF04F0F341777843374BE342 /* Pods_LocationTracker.framework */; };
+		921368A72528E13C003FDCC4 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921368A62528E13C003FDCC4 /* BaseRouter.swift */; };
+		921368AA2528EDF8003FDCC4 /* StoryboardIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921368A92528EDF8003FDCC4 /* StoryboardIdentifier.swift */; };
+		921368AD2528EF01003FDCC4 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921368AC2528EF01003FDCC4 /* MainRouter.swift */; };
+		921368B02528EF37003FDCC4 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921368AF2528EF37003FDCC4 /* LoginRouter.swift */; };
+		921368B32528F17B003FDCC4 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921368B22528F17B003FDCC4 /* MapRouter.swift */; };
 		92504FC4251FCEC40049DAE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92504FC3251FCEC40049DAE0 /* AppDelegate.swift */; };
 		92504FC6251FCEC40049DAE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92504FC5251FCEC40049DAE0 /* SceneDelegate.swift */; };
 		92504FC8251FCEC40049DAE0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92504FC7251FCEC40049DAE0 /* MapViewController.swift */; };
@@ -15,11 +20,19 @@
 		92504FCD251FCEC50049DAE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92504FCC251FCEC50049DAE0 /* Assets.xcassets */; };
 		92504FD0251FCEC50049DAE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92504FCE251FCEC50049DAE0 /* LaunchScreen.storyboard */; };
 		926A1CE02528D97100EF8CD9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926A1CDF2528D97100EF8CD9 /* User.swift */; };
+		926A1CE72528DAD100EF8CD9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926A1CE62528DAD100EF8CD9 /* MainViewController.swift */; };
+		926A1CED2528DCA600EF8CD9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926A1CEC2528DCA600EF8CD9 /* LoginViewController.swift */; };
+		926A1CF42528DD4800EF8CD9 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 926A1CF32528DD4800EF8CD9 /* Auth.storyboard */; };
 		926E688A252506CF005D2677 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926E6889252506CF005D2677 /* Coordinate.swift */; };
 		926E688E25250817005D2677 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926E688D25250817005D2677 /* Path.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		921368A62528E13C003FDCC4 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		921368A92528EDF8003FDCC4 /* StoryboardIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifier.swift; sourceTree = "<group>"; };
+		921368AC2528EF01003FDCC4 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		921368AF2528EF37003FDCC4 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		921368B22528F17B003FDCC4 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
 		92504FC0251FCEC40049DAE0 /* LocationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92504FC3251FCEC40049DAE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92504FC5251FCEC40049DAE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +42,9 @@
 		92504FCF251FCEC50049DAE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92504FD1251FCEC50049DAE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		926A1CDF2528D97100EF8CD9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		926A1CE62528DAD100EF8CD9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		926A1CEC2528DCA600EF8CD9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		926A1CF32528DD4800EF8CD9 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		926E6889252506CF005D2677 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		926E688D25250817005D2677 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		95D6EE4F0C01226034A15CF8 /* Pods-LocationTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.debug.xcconfig"; path = "Target Support Files/Pods-LocationTracker/Pods-LocationTracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +93,7 @@
 		92504FC2251FCEC40049DAE0 /* LocationTracker */ = {
 			isa = PBXGroup;
 			children = (
+				926A1CEA2528DC4100EF8CD9 /* Auth */,
 				926A1CE32528DA4F00EF8CD9 /* Main */,
 				926E6888252506A8005D2677 /* Model */,
 				92504FC3251FCEC40049DAE0 /* AppDelegate.swift */,
@@ -84,6 +101,8 @@
 				92504FCC251FCEC50049DAE0 /* Assets.xcassets */,
 				92504FCE251FCEC50049DAE0 /* LaunchScreen.storyboard */,
 				92504FD1251FCEC50049DAE0 /* Info.plist */,
+				921368A62528E13C003FDCC4 /* BaseRouter.swift */,
+				921368A92528EDF8003FDCC4 /* StoryboardIdentifier.swift */,
 			);
 			path = LocationTracker;
 			sourceTree = "<group>";
@@ -93,8 +112,21 @@
 			children = (
 				92504FC9251FCEC40049DAE0 /* Main.storyboard */,
 				92504FC7251FCEC40049DAE0 /* MapViewController.swift */,
+				926A1CE62528DAD100EF8CD9 /* MainViewController.swift */,
+				921368AC2528EF01003FDCC4 /* MainRouter.swift */,
+				921368B22528F17B003FDCC4 /* MapRouter.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		926A1CEA2528DC4100EF8CD9 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				926A1CEC2528DCA600EF8CD9 /* LoginViewController.swift */,
+				926A1CF32528DD4800EF8CD9 /* Auth.storyboard */,
+				921368AF2528EF37003FDCC4 /* LoginRouter.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		926E6888252506A8005D2677 /* Model */ = {
@@ -177,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				926A1CF42528DD4800EF8CD9 /* Auth.storyboard in Resources */,
 				92504FD0251FCEC50049DAE0 /* LaunchScreen.storyboard in Resources */,
 				92504FCD251FCEC50049DAE0 /* Assets.xcassets in Resources */,
 				92504FCB251FCEC40049DAE0 /* Main.storyboard in Resources */,
@@ -249,11 +282,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921368B32528F17B003FDCC4 /* MapRouter.swift in Sources */,
+				926A1CE72528DAD100EF8CD9 /* MainViewController.swift in Sources */,
+				921368A72528E13C003FDCC4 /* BaseRouter.swift in Sources */,
+				921368B02528EF37003FDCC4 /* LoginRouter.swift in Sources */,
 				92504FC8251FCEC40049DAE0 /* MapViewController.swift in Sources */,
 				92504FC4251FCEC40049DAE0 /* AppDelegate.swift in Sources */,
 				926A1CE02528D97100EF8CD9 /* User.swift in Sources */,
+				926A1CED2528DCA600EF8CD9 /* LoginViewController.swift in Sources */,
 				92504FC6251FCEC40049DAE0 /* SceneDelegate.swift in Sources */,
+				921368AA2528EDF8003FDCC4 /* StoryboardIdentifier.swift in Sources */,
 				926E688E25250817005D2677 /* Path.swift in Sources */,
+				921368AD2528EF01003FDCC4 /* MainRouter.swift in Sources */,
 				926E688A252506CF005D2677 /* Coordinate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

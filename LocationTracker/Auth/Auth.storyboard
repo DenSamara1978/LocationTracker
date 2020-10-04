@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6dO-nN-6TY">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="GMl-dG-gux">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="6dO-nN-6TY" customClass="LoginViewController" customModule="LocationTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RDy-pR-9Nj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txo-Pm-N2F">
+                                <rect key="frame" x="173.5" y="321" width="67" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Войти"/>
+                                <connections>
+                                    <action selector="login:" destination="eXa-aU-img" eventType="touchUpInside" id="hhm-f9-IqP"/>
+                                    <action selector="login:" destination="6dO-nN-6TY" eventType="touchUpInside" id="kBm-3G-0hl"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IOw-en-1yf">
+                                <rect key="frame" x="77" y="222.5" width="260" height="38.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="p7F-j3-j37"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Логин" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EWY-Rf-Fno">
+                                <rect key="frame" x="77" y="164" width="260" height="38.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="3hw-EG-vDj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="loginTextField:" destination="eXa-aU-img" eventType="editingDidEnd" id="qnN-97-s4G"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gru-Xw-2VJ">
+                                <rect key="frame" x="107" y="382" width="200" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Зарегистроваться"/>
+                                <connections>
+                                    <action selector="register:" destination="6dO-nN-6TY" eventType="touchUpInside" id="kMc-R6-JeX"/>
+                                    <action selector="register:" destination="eXa-aU-img" eventType="touchUpInside" id="tGE-OV-hyP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="w0M-xU-AtZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IOw-en-1yf" firstAttribute="centerX" secondItem="w0M-xU-AtZ" secondAttribute="centerX" id="0aO-Ef-Gny"/>
+                            <constraint firstItem="txo-Pm-N2F" firstAttribute="centerX" secondItem="w0M-xU-AtZ" secondAttribute="centerX" id="4e0-g1-TJX"/>
+                            <constraint firstItem="Gru-Xw-2VJ" firstAttribute="top" secondItem="txo-Pm-N2F" secondAttribute="bottom" constant="20" id="AKQ-su-VGA"/>
+                            <constraint firstItem="EWY-Rf-Fno" firstAttribute="centerX" secondItem="w0M-xU-AtZ" secondAttribute="centerX" id="IxE-dO-0fc"/>
+                            <constraint firstItem="Gru-Xw-2VJ" firstAttribute="centerX" secondItem="w0M-xU-AtZ" secondAttribute="centerX" id="KNL-Qb-Fpe"/>
+                            <constraint firstItem="txo-Pm-N2F" firstAttribute="top" secondItem="IOw-en-1yf" secondAttribute="bottom" constant="60" id="Xkp-vU-Yac"/>
+                            <constraint firstItem="IOw-en-1yf" firstAttribute="top" secondItem="EWY-Rf-Fno" secondAttribute="bottom" constant="20" id="e4a-TH-yPe"/>
+                            <constraint firstItem="EWY-Rf-Fno" firstAttribute="top" secondItem="w0M-xU-AtZ" secondAttribute="top" constant="120" id="iv0-9b-Q9J"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginTextEdit" destination="EWY-Rf-Fno" id="yED-dW-Xfe"/>
+                        <outlet property="passwordTextField" destination="IOw-en-1yf" id="Seh-pn-Cgf"/>
+                        <outlet property="router" destination="xjN-dx-eaR" id="Jtg-aC-zsz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CVa-Ny-tQa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="xjN-dx-eaR" customClass="LoginRouter" customModule="LocationTracker" customModuleProvider="target"/>
+                <exit id="eXa-aU-img" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-26" y="136"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

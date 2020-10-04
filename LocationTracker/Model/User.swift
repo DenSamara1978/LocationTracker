@@ -19,7 +19,7 @@ final class User: Object {
         self.password = _password
     }
 
-    override class func primaryKey() -> String? {
+    override static func primaryKey() -> String? {
         return "login"
     }
 }
