@@ -13,7 +13,7 @@ final class LoginRouter: BaseRouter {
         let controller = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(MainViewController.self)
         
-        setAsRoot(UINavigationController(rootViewController: controller))
+        setAsRoot(controller)
     }
 
 }

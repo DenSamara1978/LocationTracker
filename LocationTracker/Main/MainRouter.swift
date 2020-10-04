@@ -9,16 +9,17 @@
 import UIKit
 
 final class MainRouter: BaseRouter {
+   
     func toMap() {
         let controller = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(MapViewController.self)
         
-        show(controller)
+        setAsRoot(controller)
     }
     
     func toLaunch() {
         let controller = UIStoryboard(name: "Auth", bundle: nil)
             .instantiateViewController(LoginViewController.self)
-        setAsRoot(UINavigationController(rootViewController: controller))
+        setAsRoot(controller)
     }
 }

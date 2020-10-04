@@ -14,8 +14,9 @@ class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var trackingActionButton: UIBarButtonItem!
-    @IBOutlet weak var router: MapRouter!
-    
+    @IBOutlet var router: MapRouter!
+    @IBOutlet weak var navBar: UINavigationItem!
+
     private var beginBackgroundTask: UIBackgroundTaskIdentifier?
     private var realmNotification: NotificationToken?
 
@@ -34,6 +35,8 @@ class MapViewController: UIViewController {
         configureBackgroundTask()
         configurateLocationManager()
         configurateMap()
+        
+        navBar.title = ""
     }
     
     func configureBackgroundTask() {

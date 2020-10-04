@@ -12,6 +12,6 @@ final class MapRouter: BaseRouter {
     func toLaunch() {
         let controller = UIStoryboard(name: "Auth", bundle: nil)
             .instantiateViewController(LoginViewController.self)
-        setAsRoot(UINavigationController(rootViewController: controller))
+        setAsRoot(controller)
     }
 }

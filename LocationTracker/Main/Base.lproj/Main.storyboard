@@ -21,43 +21,56 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2RN-je-gTA">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="1Mw-NI-e8l">
+                                        <barButtonItem key="leftBarButtonItem" title="Начать" id="OnW-pL-615">
+                                            <connections>
+                                                <action selector="trackingAction:" destination="BYZ-38-t0r" id="Uyr-y7-Ka8"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem title="Выйти" id="1dt-YA-UoP">
+                                                <connections>
+                                                    <action selector="logout:" destination="BYZ-38-t0r" id="iSZ-PE-aRT"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Предыдущий" id="e90-NX-mag">
+                                                <connections>
+                                                    <action selector="prevTracking:" destination="BYZ-38-t0r" id="ydb-6Y-NNe"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N9j-iJ-k7E" secondAttribute="trailing" id="36P-Bg-IXX"/>
-                            <constraint firstItem="N9j-iJ-k7E" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SiW-6t-g5l"/>
+                            <constraint firstItem="2RN-je-gTA" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="CGM-OE-qi1"/>
+                            <constraint firstItem="N9j-iJ-k7E" firstAttribute="top" secondItem="2RN-je-gTA" secondAttribute="bottom" id="SCd-NT-qAy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="N9j-iJ-k7E" secondAttribute="bottom" id="W8H-6Q-xdc"/>
+                            <constraint firstItem="2RN-je-gTA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cNW-BT-ID1"/>
+                            <constraint firstItem="2RN-je-gTA" firstAttribute="leading" secondItem="N9j-iJ-k7E" secondAttribute="leading" id="lHD-1q-90S"/>
                             <constraint firstItem="N9j-iJ-k7E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wP2-lJ-FXO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tem-eI-Wfk">
-                        <barButtonItem key="leftBarButtonItem" title="Начать" id="OnW-pL-615">
-                            <connections>
-                                <action selector="trackingAction:" destination="BYZ-38-t0r" id="Uyr-y7-Ka8"/>
-                            </connections>
-                        </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem title="Выйти" id="1dt-YA-UoP">
-                                <connections>
-                                    <action selector="logout:" destination="BYZ-38-t0r" id="iSZ-PE-aRT"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Предыдущий" id="e90-NX-mag">
-                                <connections>
-                                    <action selector="prevTracking:" destination="BYZ-38-t0r" id="ydb-6Y-NNe"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="N9j-iJ-k7E" id="g8F-J1-IQL"/>
-                        <outlet property="router" destination="DyF-lg-J3o" id="4Md-eX-HZT"/>
+                        <outlet property="navBar" destination="1Mw-NI-e8l" id="Bih-sg-dMA"/>
+                        <outlet property="router" destination="DyF-lg-J3o" id="GNw-Yq-GyK"/>
                         <outlet property="trackingActionButton" destination="OnW-pL-615" id="fve-qI-hOT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <customObject id="DyF-lg-J3o" customClass="MapRouter" customModule="LocationTracker" customModuleProvider="target"/>
+                <customObject id="DyF-lg-J3o" customClass="MapRouter" customModule="LocationTracker" customModuleProvider="target">
+                    <connections>
+                        <outlet property="controller" destination="BYZ-38-t0r" id="tgl-tm-d6s"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="138.61607142857142"/>
         </scene>
@@ -102,25 +115,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nL3-gb-K0W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <customObject id="gGb-FV-SB5" customClass="MainRouter" customModule="LocationTracker" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="1048" y="-560"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="dkx-7R-jw0">
-            <objects>
-                <navigationController storyboardIdentifier="NavMapController" automaticallyAdjustsScrollViewInsets="NO" id="e2t-ai-QiK" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qbj-d7-Ugi">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ayP-Tl-O7G"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kyb-eC-xxJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+            <point key="canvasLocation" x="265" y="139"/>
         </scene>
     </scenes>
     <resources>
