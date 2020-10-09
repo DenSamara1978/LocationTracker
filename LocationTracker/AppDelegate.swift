@@ -13,13 +13,27 @@ import RealmSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         GMSServices.provideAPIKey("AIzaSyDEQLMuLqPx5gTreWGOZTB4P3NZ4pCNu1g")
         Realm.Configuration.defaultConfiguration = Realm.Configuration ( deleteRealmIfMigrationNeeded: true )
+
+        let controller: UIViewController
+        if UserDefaults.standard.bool(forKey: "isLogin") {
+            controller = UIStoryboard(name: "Main", bundle: nil)
+                .instantiateViewController(MainViewController.self)
+        } else {
+            controller = UIStoryboard(name: "Auth", bundle: nil)
+                .instantiateViewController(LoginViewController.self)
+        }
+        window = UIWindow()
+        window?.rootViewController = UINavigationController(rootViewController: controller)
+        window?.makeKeyAndVisible()
+
+
         return true
     }
 

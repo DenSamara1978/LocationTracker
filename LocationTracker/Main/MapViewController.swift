@@ -10,11 +10,13 @@ import UIKit
 import GoogleMaps
 import RealmSwift
 
-class ViewController: UIViewController {
+class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var trackingActionButton: UIBarButtonItem!
-    
+    @IBOutlet var router: MapRouter!
+    @IBOutlet weak var navBar: UINavigationItem!
+
     private var beginBackgroundTask: UIBackgroundTaskIdentifier?
     private var realmNotification: NotificationToken?
 
@@ -33,6 +35,8 @@ class ViewController: UIViewController {
         configureBackgroundTask()
         configurateLocationManager()
         configurateMap()
+        
+        navBar.title = ""
     }
     
     func configureBackgroundTask() {
@@ -106,10 +110,16 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func logout(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "isLogin")
+        router.toLaunch()
+    }
+    
     private func loadRealmPath() {
         do {
             let realm = try Realm()
-            path = realm.objects(Path.self).first ?? Path()
+            let pathes = realm.objects(Path.self)
+            let path = pathes.first ?? Path()
             routePath = GMSMutablePath()
             var coord = CLLocationCoordinate2D()
             path.points.forEach { coordinate in
@@ -146,11 +156,11 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: GMSMapViewDelegate {
+extension MapViewController: GMSMapViewDelegate {
     
 }
 
-extension ViewController: CLLocationManagerDelegate {
+extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error.localizedDescription)
     }
