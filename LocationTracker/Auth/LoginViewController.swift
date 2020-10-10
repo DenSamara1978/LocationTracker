@@ -8,6 +8,8 @@
 
 import UIKit
 import RealmSwift
+import RxSwift
+import RxCocoa
 
 class LoginViewController: UIViewController {
 
@@ -15,11 +17,25 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginTextEdit: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var router: LoginRouter!
-    
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         UserDefaults.standard.set(false, forKey: "isLogin")
+        configureLoginBindings()
     }
+
+    func configureLoginBindings() {
+        _ = Observable.combineLatest(loginTextEdit.rx.text, passwordTextField.rx.text)
+                .map { login, password in
+                    return !(login ?? "").isEmpty && !(password ?? "").isEmpty
+                }
+                .bind { [weak loginButton, weak registerButton] inputFilled in
+                    loginButton?.isEnabled = inputFilled
+                    registerButton?.isEnabled = inputFilled
+            }
+        }
     
     @IBAction func login(_ sender: Any) {
         guard let user = userByLoginOrPassword() else { return }
