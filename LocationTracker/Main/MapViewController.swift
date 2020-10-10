@@ -136,8 +136,9 @@ class MapViewController: UIViewController {
     private func removeRealmPath() {
         do {
             let realm = try Realm()
+            let paths = realm.objects(Path.self)
             realm.beginWrite()
-            realm.deleteAll()
+            realm.delete(paths)
             try realm.commitWrite()
         } catch {
             print(error.localizedDescription)
