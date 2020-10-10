@@ -20,7 +20,7 @@ class MapViewController: UIViewController {
     private var beginBackgroundTask: UIBackgroundTaskIdentifier?
     private var realmNotification: NotificationToken?
 
-    private var locationManager: CLLocationManager?
+    private var locationManager = LocationManager.instance
     private let initialCoordinate = CLLocationCoordinate2D(latitude: 55.753215, longitude: 37.622504)
     
     private var route: GMSPolyline?
@@ -33,7 +33,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBackgroundTask()
-        configurateLocationManager()
+        configureLocationManager()
         configurateMap()
         
         navBar.title = ""
@@ -47,15 +47,17 @@ class MapViewController: UIViewController {
         }
     }
 
-    func configurateLocationManager() {
-        locationManager = CLLocationManager()
-        locationManager?.requestAlwaysAuthorization()
-        locationManager?.delegate = self
-        locationManager?.allowsBackgroundLocationUpdates = true
-        locationManager?.pausesLocationUpdatesAutomatically = false
-        locationManager?.startMonitoringSignificantLocationChanges()
+    func configureLocationManager() {
+        _ = locationManager.location.asObservable().bind { [weak self] location in
+            guard let self = self, let location = location else { return }
+            if !self.isTracking { return }
+            self.routePath?.add(location.coordinate)
+            self.route?.path = self.routePath
+            self.path.addPoint(coordinate: location.coordinate)
+            self.mapView.animate(toLocation: location.coordinate)
+        }
     }
-    
+
     func configurateMap() {
         mapView.camera = GMSCameraPosition.camera(withTarget: initialCoordinate, zoom: 15)
         mapView.delegate = self
@@ -69,12 +71,12 @@ class MapViewController: UIViewController {
         routePath = GMSMutablePath()
         route?.map = mapView
         path = Path()
-        locationManager?.startUpdatingLocation()
+        locationManager.startUpdatingLocation()
         trackingActionButton.title = "Завершить"
     }
     
     func stopTracking() {
-        locationManager?.stopUpdatingLocation()
+        locationManager.stopUpdatingLocation()
         isTracking = false
         trackingActionButton.title = "Начать"
     }
