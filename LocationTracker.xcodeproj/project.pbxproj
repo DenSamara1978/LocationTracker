@@ -13,6 +13,7 @@
 		921368AD2528EF01003FDCC4 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921368AC2528EF01003FDCC4 /* MainRouter.swift */; };
 		921368B02528EF37003FDCC4 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921368AF2528EF37003FDCC4 /* LoginRouter.swift */; };
 		921368B32528F17B003FDCC4 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921368B22528F17B003FDCC4 /* MapRouter.swift */; };
+		924BA99F25320FD0000DC344 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924BA99E25320FD0000DC344 /* LocationManager.swift */; };
 		92504FC4251FCEC40049DAE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92504FC3251FCEC40049DAE0 /* AppDelegate.swift */; };
 		92504FC6251FCEC40049DAE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92504FC5251FCEC40049DAE0 /* SceneDelegate.swift */; };
 		92504FC8251FCEC40049DAE0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92504FC7251FCEC40049DAE0 /* MapViewController.swift */; };
@@ -33,6 +34,7 @@
 		921368AC2528EF01003FDCC4 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		921368AF2528EF37003FDCC4 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		921368B22528F17B003FDCC4 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
+		924BA99E25320FD0000DC344 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		92504FC0251FCEC40049DAE0 /* LocationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92504FC3251FCEC40049DAE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92504FC5251FCEC40049DAE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				926E6889252506CF005D2677 /* Coordinate.swift */,
 				926E688D25250817005D2677 /* Path.swift */,
 				926A1CDF2528D97100EF8CD9 /* User.swift */,
+				924BA99E25320FD0000DC344 /* LocationManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				926A1CED2528DCA600EF8CD9 /* LoginViewController.swift in Sources */,
 				92504FC6251FCEC40049DAE0 /* SceneDelegate.swift in Sources */,
 				921368AA2528EDF8003FDCC4 /* StoryboardIdentifier.swift in Sources */,
+				924BA99F25320FD0000DC344 /* LocationManager.swift in Sources */,
 				926E688E25250817005D2677 /* Path.swift in Sources */,
 				921368AD2528EF01003FDCC4 /* MainRouter.swift in Sources */,
 				926E688A252506CF005D2677 /* Coordinate.swift in Sources */,

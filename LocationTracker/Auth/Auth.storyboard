@@ -69,8 +69,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="txo-Pm-N2F" id="lwM-BR-Tjy"/>
                         <outlet property="loginTextEdit" destination="EWY-Rf-Fno" id="yED-dW-Xfe"/>
                         <outlet property="passwordTextField" destination="IOw-en-1yf" id="Seh-pn-Cgf"/>
+                        <outlet property="registerButton" destination="Gru-Xw-2VJ" id="fXm-xs-X7z"/>
                         <outlet property="router" destination="xjN-dx-eaR" id="Jtg-aC-zsz"/>
                     </connections>
                 </viewController>
