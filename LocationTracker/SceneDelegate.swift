@@ -7,17 +7,19 @@
 //
 
 import UIKit
+import UserNotifications
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        configureNotification()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -39,6 +41,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This may occur due to temporary interruptions (ex. an incoming phone call).
         let vc = self.window?.rootViewController
         vc?.view.alpha = 0.0
+        
+        sendCustomNotificatioRequest()
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
@@ -52,6 +56,49 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    func configureNotification() {
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.getNotificationSettings { settings in
+            switch settings.authorizationStatus {
+            case .authorized:
+                print("Разрешение есть")
+            case .denied:
+                print("Разрешения нет")
+            default:
+                notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+                    if granted {
+                        print("Разрешение получено.")
+                    } else {
+                        print("Разрешение не получено.")
+                    }
+                }
+            }
+        }
+    }
 
+    func makeNotificationContent() -> UNNotificationContent {
+        let content = UNMutableNotificationContent()
+        content.title = "Прошло много времени"
+        content.subtitle = "30 минут уже пролетело..."
+        content.body = "Пора вернуться к делам"
+        content.badge = 1
+        return content
+    }
+    
+    func makeIntervalNotificatioTrigger() -> UNNotificationTrigger {
+        return UNTimeIntervalNotificationTrigger(timeInterval: 30 * 60, repeats: false)
+    }
+    
+    func sendCustomNotificatioRequest() {
+        let content = makeNotificationContent()
+        let trigger = makeIntervalNotificatioTrigger()
+        let request = UNNotificationRequest(identifier: "alaram", content: content, trigger: trigger)
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.add(request) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
 
