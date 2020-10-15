@@ -162,20 +162,3 @@ class MapViewController: UIViewController {
 extension MapViewController: GMSMapViewDelegate {
     
 }
-
-extension MapViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if !isTracking { return }
-        if let location = locations.first {
-            routePath?.add(location.coordinate)
-            route?.path = routePath
-            path.addPoint(coordinate: location.coordinate)
-            mapView.animate(toLocation: location.coordinate)
-            
-        }
-    }
-}
